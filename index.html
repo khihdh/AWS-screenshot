@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Simple S3 Gallery</title>
+	</head>
+	<body>
+		<h1>S3 AWS Screenshots</h1>
+		<h2>Type the full URL to take a screenshot</h2>
+			<form action="/upload" method="post" enctype="application/json">
+    			<p><input type="text" name="url"></p>
+    			<p><input type="submit" value="Upload"></p>
+			</form>
+		<h2>Screenshots</h2>
+		{{#Objects}}
+  			<p><img src="https://s3.amazonaws.com/{{Bucket}}/{{Key}}" width="400px" /></p>
+		{{/Objects}}
+	</body>
+</html>
